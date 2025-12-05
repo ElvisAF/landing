@@ -1,12 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfólio de Elvis Ferreira - Estático</title>
+    <!-- Link para o arquivo de estilos externo -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Elvis</h1>
+
+    <!-- Cabeçalho Fixo (Navbar) -->
+    <header class="header-fixed">
+        <div class="navbar-content container">
+            <!-- Nome/Logo do Portfólio -->
+            <a href="#inicio" class="text-xl font-extrabold text-light hover:text-accent">
+                Elvis Ferreira - Dev
+            </a>
+            
+            <!-- Links de Navegação -->
+            <nav class="nav-links">
+                <a href="#sobre">Sobre Mim</a>
+                <a href="#servicos">Meus Serviços</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <!-- Menu Mobile (Ícone Hamburguer) -->
+            <div class="menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </div>
+        </div>
+    </header>
+
+    <main class="container"> 
+        <!-- 1. Seção Destaque/Início (Hero) -->
+        <section id="inicio" class="section">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <!-- Foto de Perfil (Referência: imagens/minha_foto.jpg) -->
+                <img 
+                    src="imagens/e807b0e1-5954-4bb2-aaeb-05781ddbbed9.jpg"
+                    alt="Foto de perfil de Elvis Ferreira" 
+                    class="profile-pic"
+                    onerror="this.onerror=null; this.src='https://placehold.co/144x144/a78bfa/ffffff?text=Perfil'"
+                >
+                
+                <h1 style="font-size: 3.5rem; color: white; margin-bottom: 0.5rem;">
+                    Olá, eu sou <span class="text-accent">Elvis Ferreira</span>
+                </h1>
+                
+                <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 56rem; margin: 0 auto 2rem;">
+                    Estudante de desenvolvimento de software, criando interfaces responsivas e funcionais no universo digital.
+                </p>
+
+                <!-- Botão de Ação -->
+                <a href="#servicos" class="cta-button">
+                    Ver Projetos Recentes
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Seção Sobre Mim -->
+        <section id="sobre" class="section">
+            <h2 class="section-title text-accent">
+                Sobre Mim
+            </h2>
+            <div class="content-wrapper">
+                <p>
+                    Minha jornada no desenvolvimento de software é impulsionada pela paixão em dar vida a ideias digitais. Minha base sólida reside na trindade essencial do desenvolvimento web: <span class="text-accent" style="font-weight: 700;">HTML e CSS</span>. Com elas, eu forjo a estrutura e o design de interfaces que não são apenas funcionais, mas também esteticamente impressionantes e responsivas.
+                </p>
+                <p>
+                    Além da experiência de usuário (front-end), estou ativamente mergulhado no universo do servidor com o <span class="text-accent" style="font-weight: 700;">PHP</span>. Esta é a linguagem que atua como o "cérebro" das aplicações dinâmicas. Embora eu ainda esteja pavimentando o caminho para a maestria total no PHP, encaro cada desafio como uma etapa crucial para construir soluções completas e robustas, do design à lógica de back-end.
+                </p>
+                <!-- Dica: Adicione aqui as tecnologias que você está aprendendo! -->
+                <p class="focus-text">
+                    Próximos passos e foco de estudo: <span class="text-accent">JavaScript</span> (para interatividade avançada) e aprofundamento contínuo em <span class="text-accent">PHP</span>.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Seção Meus Serviços (ou Projetos) -->
+        <section id="servicos" class="section">
+            <h2 class="section-title text-accent">
+                Meus Serviços & Projetos
+            </h2>
+            
+            <div class="projects-grid">
+                
+                <!-- Card do Projeto Ayrton Senna -->
+                <div class="project-card">
+                    <!-- Imagem de Capa do Projeto (Referência: imagens/Ayrton_Senna_img.jpeg) -->
+                    <img 
+                        src="imagens/Ayrton_Senna_img-central.jpeg"
+                        alt="Imagem de Ayrton Senna, capa do projeto tributo."
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x192/4c1d95/ffffff?text=Projeto+Senna'"
+                    >
+                    
+                    <div class="project-card-content">
+                        <h3 style="color: white; margin-bottom: 0.5rem;">Tributo a Ayrton Senna</h3>
+                        <p class="project-card-subtitle">Desenvolvimento Web (HTML & CSS)</p>
+                        
+                        <p class="text-secondary" style="margin-bottom: 1rem;">
+                            Este foi um projeto inicial focado em demonstrações de layout e estilização puras com HTML e CSS. O site homenageia um dos maiores pilotos de todos os tempos, utilizando técnicas de design responsivo e tipografia elegante.
+                        </p>
+                        
+                        <!-- Botão de Ver Projeto -->
+                        <a href="#" target="_blank">
+                            Ver Projeto (Link Placeholder)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card de Sugestão de Futuro Projeto -->
+                <div class="placeholder-card">
+                    <svg style="width: 3rem; height: 3rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3>Novo Projeto Aqui</h3>
+                    <p>Adicione seu próximo trabalho em JavaScript/React/Angular!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Seção Contato -->
+        <section id="contato" class="section">
+            <h2 class="section-title text-accent">
+                Entre em Contato
+            </h2>
+            <div class="contact-info">
+                <p class="text-secondary" style="margin-bottom: 2rem;">Estou aberto a oportunidades de colaboração e novos projetos. Ficarei feliz em receber sua mensagem!</p>
+                
+                <!-- E-mail -->
+                <div class="contact-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8a2 2 0 002-2V6a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 002 2H3z"></path></svg>
+                    <p style="font-weight: 600;">Email: <a href="mailto:seu.email@exemplo.com" style="text-decoration: underline;">elvisassisferreira559@gmail.com</a></p>
+                </div>
+                
+                <!-- Instagram -->
+                <div class="contact-item">
+                    <!-- Ícone Placeholder do Instagram -->
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v-1a4 4 0 00-4-4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4v-8a4 4 0 00-4-4z"></path></svg>
+                    <p style="font-weight: 600;">Instagram: <a href="https://www.instagram.com/elvs_fr?igsh=MWdmcGplNXpwamN5ZA==" target="_blank" style="text-decoration: underline;">@evis_fr</a></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
     
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p style="font-size: 0.875rem;">&copy; 2025 Elvis Ferreira. Construído com **Apenas HTML e CSS**.</p>
+        <p style="font-size: 0.75rem; margin-top: 0.5rem;"><a href="#inicio">Voltar ao Topo</a></p>
+    </footer>
 </body>
 </html>

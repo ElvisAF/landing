@@ -1,0 +1,289 @@
+/* --- 1. VARIÁVEIS E ESTILOS GLOBAIS --- */
+:root {
+    --primary-color: #a78bfa; /* Violet 400 - Cor de destaque */
+    --secondary-color: #7c3aed; /* Violet 600 - Cor de ação */
+    --bg-darkest: #0B0C15; /* Fundo muito escuro */
+    --bg-section: #1a1b24; /* Fundo de seção (similar a gray-900) */
+    --text-light: #e0e7ff; /* Texto principal (Indigo 100) */
+    --text-secondary: #9ca3af; /* Texto secundário (gray-400) */
+    --border-color: #374151; /* Cor de borda (gray-700) */
+    --border-accent: #4c1d95; /* Cor de borda acentuada (violet-800) */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-darkest);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Definição de Largura Máxima Centralizada para Conteúdo */
+.container {
+    max-width: 1280px; /* 7xl em Tailwind */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    position: relative;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease-in-out;
+}
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Títulos */
+h1 { font-size: 3rem; font-weight: 800; }
+h2 { font-size: 2.25rem; font-weight: 800; }
+h3 { font-size: 1.5rem; font-weight: 700; }
+
+/* Cor de destaque para títulos */
+.text-accent { color: var(--primary-color); }
+.text-secondary { color: var(--text-secondary); }
+
+/* --- 2. CABEÇALHO (NAVBAR) --- */
+.header-fixed {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--bg-darkest);
+    border-bottom: 2px solid var(--border-accent);
+    box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.6);
+}
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem; /* h-16 */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.nav-links {
+    display: none;
+    gap: 2rem; /* space-x-8 */
+}
+.nav-links a {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+.menu-button {
+    display: block;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+.menu-button:hover {
+    color: var(--primary-color);
+}
+
+/* Desktop Navigation */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+    .menu-button {
+        display: none;
+    }
+}
+
+/* --- 3. SEÇÕES DE CONTEÚDO --- */
+.section {
+    padding: 4rem 2rem; /* py-16, px-8 */
+    background-color: var(--bg-section);
+    border-radius: 0.75rem; /* rounded-xl */
+    margin-bottom: 3rem; /* mb-12 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); /* shadow-xl */
+    border: 1px solid var(--border-color);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--border-accent);
+    padding-bottom: 0.5rem;
+}
+
+/* 3.1. Seção Destaque/Início (Hero) */
+#inicio {
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    border: 1px solid var(--border-accent);
+    /* Opcional: Fundo Transparente */
+    background-color: rgba(26, 27, 36, 0.8);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    margin-top: 3rem;
+}
+
+.profile-pic {
+    width: 9rem; /* w-36 */
+    height: 9rem; /* h-36 */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2.5rem; /* py-3 px-10 */
+    border-radius: 9999px; /* rounded-full */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+.cta-button:hover {
+    background-color: #6d28d9; /* Um tom mais escuro */
+    transform: scale(1.05);
+    /* Efeito Glow para CTA (Apenas CSS) */
+    box-shadow: 0 0 20px var(--primary-color), 0 0 8px var(--primary-color) inset;
+}
+
+/* 3.2. Seção Sobre Mim */
+#sobre .content-wrapper {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#sobre p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+#sobre .focus-text {
+    padding-top: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* 3.3. Seção Serviços/Projetos */
+.projects-grid {
+    display: grid;
+    gap: 2rem; /* gap-8 */
+}
+
+/* Responsive Grid */
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.project-card {
+    background-color: var(--bg-section);
+    border: 1px solid var(--border-accent);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(167, 139, 250, 0.4);
+}
+
+.project-card img {
+    width: 100%;
+    height: 12rem; /* h-48 */
+    object-fit: cover;
+}
+.project-card-content {
+    padding: 1.5rem; /* p-6 */
+}
+.project-card-subtitle {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+.project-card-content a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.project-card-content a:hover {
+     background-color: #6d28d9;
+}
+
+/* Card de Placeholder */
+.placeholder-card {
+    background-color: var(--bg-section);
+    border: 2px dashed var(--secondary-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(124, 58, 237, 0.3);
+}
+.placeholder-card svg {
+    width: 3rem;
+    height: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+.placeholder-card h3 {
+    color: var(--text-light);
+}
+.placeholder-card p {
+    color: #6b7280; /* gray-500 */
+}
+
+/* 3.4. Seção Contato */
+#contato {
+    border: 1px solid var(--border-accent);
+}
+#contato .contact-info {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.contact-item svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* --- 4. RODAPÉ --- */
+.footer {
+    background-color: var(--bg-darkest);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid var(--border-accent);
+    position: relative;
+}
